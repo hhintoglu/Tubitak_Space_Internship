@@ -1,0 +1,21 @@
+* C:\Users\hhint\Desktop\Flyback_Converter_1st_Draft.asc
+V1 N001 0 28V
+L1 N005 N002 422.64µH
+L2 N003 0 46.4µH
+D1 N003 N004 B540C
+C1 N004 0 56µF
+M1 N005 N006 0 0 BSC265N10LSF
+V2 N006 0 PULSE(0 12 0 1n 1n {D*Ts} {Ts})
+R1 N004 0 1.25
+L3 N002 N001 8.4µH
+.model D D
+.lib C:\Users\hhint\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\hhint\Documents\LTspiceXVII\lib\cmp\standard.mos
+K L1 L2 1
+.param D = 0.373
+.param Ts = 10µs
+.tran 0 5m 0 10n
+.backanno
+.end
